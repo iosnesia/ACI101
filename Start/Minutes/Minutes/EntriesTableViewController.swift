@@ -1,4 +1,6 @@
 import UIKit
+import AppCenter
+import AppCenterCrashes
 
 class EntriesTableViewController: UITableViewController
 {
@@ -61,6 +63,12 @@ class EntriesTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        MSAppCenter.start("080ad295-27ab-4533-96e2-21f49844788b", withServices:[
+          MSCrashes.self
+        ])
+        MSAppCenter.start("080ad295-27ab-4533-96e2-21f49844788b", withServices:[
+          MSCrashes.self
+        ])
     }
     
     override func didReceiveMemoryWarning()

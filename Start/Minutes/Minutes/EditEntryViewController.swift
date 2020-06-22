@@ -1,5 +1,7 @@
 import Foundation
 import UIKit
+import AppCenter
+import AppCenterCrashes
 
 class EditEntryViewController: UIViewController
 {
@@ -11,7 +13,12 @@ class EditEntryViewController: UIViewController
     override func viewDidLoad()
     {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(EditEntryViewController.onSave))
-
+        MSAppCenter.start("080ad295-27ab-4533-96e2-21f49844788b", withServices:[
+          MSCrashes.self
+        ])
+        MSAppCenter.start("080ad295-27ab-4533-96e2-21f49844788b", withServices:[
+          MSCrashes.self
+        ])
         navigationItem.rightBarButtonItem = saveButton
 
         if entry == nil
